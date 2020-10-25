@@ -1,0 +1,389 @@
+/* variables */
+
+:root {
+    /* colors */
+    --darkGray: hsl(0, 0%, 63%);
+    --veryDarkGray: hsl(0, 0%, 27%);
+    --black: hsl(0, 0%, 0%);
+    --white: hsl(0, 0%, 100%);
+
+    /* fonts */
+    --primaryFontSize: 1.2rem;
+    --primaryFont: 'Spartan', sans-serif;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: var(--primaryFont);
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 62.5%;
+    font-size: var(--primaryFontSize);
+    width: 100%;
+}
+
+.project {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.banner {
+    width: 100%;
+    height: 50vh;
+    background-image: url(/images/mobile-image-hero-1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.header__description {
+    width: 100%;
+    height: 50vh;
+    position: relative;
+}
+
+.article {
+    width: 100%;
+    height: 100%;
+    padding: 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.article__title {
+    margin-bottom: 2rem;
+}
+
+.article__title--font {
+    text-transform: uppercase;
+    font-size: 1rem;
+}
+
+.article__description {
+    color: var(--darkGray);
+    font-size: 1rem;
+}
+
+.nav {
+    position: relative;
+    width: 100%;
+    height: 15vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu__mobile {
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: #fff;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: all .5s ease-in-out;
+}
+
+.menu__item {
+    margin-right: 1rem;
+    list-style: none;
+    font-size: 1rem;
+    font-weight: 600;
+    position: relative;
+}
+
+.menu__item::after {
+    content: "";
+    width: 0;
+    height: 2px;
+    background-color: white;
+    position: absolute;
+    bottom: -10%;
+    transform: translateX(-100%);
+    transition: width .3s ease;
+}
+
+.menu__item:hover::after {
+    width: 100%;
+    transform: translateX(0);
+    display: block;
+}
+
+.menu__link {
+    text-decoration: none;
+    color: var(--black);
+
+}
+
+.menu__desktop {
+    width: 80%;
+    height: 100%;
+    display: none;
+    justify-content: flex-start;
+    align-items: center;
+    transition: all .5s ease-in-out;
+}
+
+.logo {
+    align-items: center;
+    align-content: center;
+    color: var(--white);
+    font-weight: 500;
+}
+
+.hamburger {
+    display: block;
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 5px;
+    border: none;
+    background-color: transparent;
+    z-index: 1;
+}
+
+.shopNowContainer {
+    /* width: 100%; */
+    padding: 2rem 0;
+}
+
+.shopNowLink {
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    color: var(--veryDarkGray);
+    font-size: .8rem;
+}
+
+.shopNowLink:hover {
+    color: var(--darkGray);
+}
+
+.shopNowLink:hover~.shopNowArrow {
+    fill: var(--darkGray);
+}
+
+.shopNowArrow {
+    margin-left: 10px;
+}
+
+.switches {
+    width: 6rem;
+    display: flex;
+    background-color: var(--black);
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translateY(-100%);
+}
+
+.btn {
+    width: 3rem;
+    height: 3rem;
+    border: none;
+    background-color: var(--black);
+}
+
+.btn:hover {
+    background-color: var(--veryDarkGray);
+    cursor: pointer;
+}
+
+.btn:active {
+    border: none;
+}
+
+.main {
+    width: 100%;
+    height: 100vh;
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.imgContainer {
+    width: 100%;
+    min-height: 40vh;
+}
+
+.imgContainer--one {
+    background-image: url(/images/image-about-dark.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.imgContainer--two {
+    background-image: url(/images/image-about-light.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Screen > 768px */
+
+@media (min-width: 768px) {
+    .hamburger {
+        display: none;
+    }
+
+    .switches {
+        width: 8rem;
+    }
+
+    .menu__mobile {
+        display: none;
+    }
+
+    .nav {
+        justify-content: space-around;
+    }
+
+    .menu__link {
+        font-weight: 500;
+        color: var(--white);
+    }
+
+    .menu__desktop {
+        display: flex;
+    }
+
+    .banner {
+        min-height: 40vh;
+        width: 100%;
+        background-image: url(/images/desktop-image-hero-1.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .header__description {
+        width: 100%;
+    }
+
+    .article {
+        width: 100%;
+        height: 100%;
+        padding: 3rem 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .article__title {
+        margin-bottom: 0;
+    }
+
+    .article__description {
+        color: var(--darkGray);
+        font-size: 1rem;
+    }
+
+    .btn {
+        width: 4rem;
+        height: 4rem;
+    }
+}
+
+/* Screen > 1440px */
+@media (min-width: 1440px) {
+    .banner {
+        height: 60vh;
+        width: 60%;
+        background-image: url(/images/desktop-image-hero-1.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        /* position: none; */
+    }
+
+    .menu {
+        align-items: center;
+    }
+
+    .logo {
+        font-size: 2rem;
+    }
+
+    .header {
+        flex-direction: row;
+    }
+
+    .header__description {
+        width: 40%;
+        height: 60vh;
+        position: relative;
+    }
+
+    .article {
+        width: 100%;
+        height: 100%;
+        padding: 3rem 4rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    .article__description {
+        color: var(--darkGray);
+        font-size: 1rem;
+    }
+
+    .shopNowContainer {
+        margin: 0 0 4rem 0;
+    }
+
+    .switches {
+        height: 3rem;
+        width: 10rem;
+        top: 100%;
+        left: 0;
+        transform: translateY(-5rem);
+    }
+
+    .btn {
+        width: 5rem;
+        height: 5rem;
+    }
+
+    .main {
+        width: 100%;
+        height: 40vh;
+        flex-direction: row;
+        margin-top: 0;
+    }
+
+    .mainText {
+        width: 33.33%;
+    }
+
+    .imgContainer {
+        width: 33%;
+        height: 40vh;
+    }
+
+    .imgContainer--one {
+        background-image: url(/images/image-about-dark.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .imgContainer--two {
+        background-image: url(/images/image-about-light.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+}

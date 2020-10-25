@@ -55,19 +55,6 @@ btnNext.addEventListener("click", () => {
   if (curIndex == imgArray.length) return (curIndex = 2);
 });
 
-// btnNext.addEventListener("keyup", (event) => {
-//   bannerImg.style.backgroundImage = `url${imgArray[curIndex]}`;
-//   title.textContent = titleArray[curIndex];
-//   article.textContent = textArray[curIndex];
-//   curIndex++;
-//   if (event.keyCode === 39) {
-//     curIndex++;
-//   } else if (event.keyCode === 39 || curIndex == imgArray.length)
-//     return (curIndex = 2);
-
-//   console.log(curIndex);
-// });
-
 btnPrev.addEventListener("click", (e) => {
   bannerImg.style.backgroundImage = `url${imgArray[curIndex]}`;
   title.textContent = titleArray[curIndex];

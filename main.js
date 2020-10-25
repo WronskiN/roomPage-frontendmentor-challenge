@@ -7,11 +7,11 @@ let btn = true;
 
 switchNav = () => {
   !btn
-    ? ((menuImg.src = "images/icon-hamburger.svg"),
+    ? ((menuImg.src = "./images/icon-hamburger.svg"),
       (menuImg.alt = "menu close"),
       (menuImg.style.color = "--darkGray"),
       (nav.style.display = "none"))
-    : ((menuImg.src = "images/icon-close.svg"),
+    : ((menuImg.src = "./images/icon-close.svg"),
       (menuImg.alt = "menu open"),
       (nav.style.display = "flex"));
 
@@ -30,9 +30,9 @@ const article = document.querySelector(".article__description");
 let bannerImg = document.querySelector(".banner");
 
 const imgArray = [
-  "(/images/desktop-image-hero-1.jpg)",
-  "(/images/desktop-image-hero-2.jpg)",
-  "(/images/desktop-image-hero-3.jpg)",
+  "(./images/desktop-image-hero-1.jpg)",
+  "(./images/desktop-image-hero-2.jpg)",
+  "(./images/desktop-image-hero-3.jpg)",
 ];
 const titleArray = [
   "Discover innovative ways to decorate",
